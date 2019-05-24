@@ -1,6 +1,6 @@
 # ScientificCalculator (maven) ZCW
 
-
+Test push
 ## Description
 
 In this project your team will build a small app to function as a calculator. This app  will be built in Java, and will use the topics and techniques discussed during the week.
