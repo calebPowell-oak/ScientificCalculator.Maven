@@ -1,20 +1,47 @@
 package com.zipcodewilmington.scientificcalculator;
 
-public class calSciFunctions {
+public class CalSciFunctions {
 
     enum UnitMode{
         DEG, RAD, GRAD;
     }
 
-    private Double memoryVal;
-    private Double currentVal;
+    private Double memoryValue;
+    private Double currentValue;
+
     private UnitMode currentUnitMode;
 
-    public calSciFunctions() {
-        memoryVal  = new Double(0);
-        currentVal = new Double(0);
-        currentUnitMode = DEG;
+    private Boolean memoryIsSet;
+
+    public CalSciFunctions() {
+        memoryValue  = new Double(0);
+        currentValue = new Double(0);
+        currentUnitMode = UnitMode.DEG;
+        memoryIsSet = false;
     }
+
+    public void setCurrentValue(Double x){
+        currentValue = x;
+    }
+
+
+
+    // memory functions
+    public void setMemory(Double x){
+        memoryValue = x;
+        memoryIsSet = true;
+    }
+
+    public void resetMemory(){
+        memoryValue = new Double(0);
+        memoryIsSet = false;
+    }
+
+    public Double recallMemory(){
+        return memoryValue;
+    }
+
+
 
     // Trig Functions
     public Double sine(Double x){
@@ -48,6 +75,23 @@ public class calSciFunctions {
     }
 
 
+    // Switch trig units mode
+    public void switchUnitsMode(){
+        switch (currentUnitMode){
+            case DEG:
+                currentUnitMode = UnitMode.RAD;
+            case RAD:
+                currentUnitMode = UnitMode.GRAD;
+            case GRAD:
+                currentUnitMode = UnitMode.DEG;
+        }
+    }
+
+    public void switchUnitsMode(String mode){
+
+     //   if(mode
+    }
+
 
 
 
@@ -60,7 +104,7 @@ public class calSciFunctions {
             case GRAD:
                 x = gradToRad(x);
                 break;
-            default:
+            case RAD:
                 break;
         }
         return x;
