@@ -2,136 +2,72 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class CalSciFunctions {
 
-    enum UnitMode{
-        DEG, RAD, GRAD;
-    }
 
-    private Double memoryValue;
-    private Double currentValue;
-    private Double factorialCutoff = 0.000001;
-
-    private UnitMode currentUnitMode;
-
-    private Boolean memoryIsSet;
-
-    public CalSciFunctions() {
-        memoryValue  = new Double(0);
-        currentValue = new Double(0);
-        currentUnitMode = UnitMode.DEG;
-        memoryIsSet = false;
-    }
-
-    public void setCurrentValue(Double x){
-        currentValue = x;
-    }
+    private static Double factorialCutoff = 0.000001;
 
 
 
-    // memory functions
-    public void setMemory(Double x){
-        memoryValue = x;
-        memoryIsSet = true;
-    }
-
-    public void resetMemory(){
-        memoryValue = new Double(0);
-        memoryIsSet = false;
-    }
-
-    public Double recallMemory(){
-        return memoryValue;
-    }
 
 
 
-    // Trig Functions
-    public Double sine(Double x){
-        x = toCurrentMode(x);
+    /** Trig Functions
+     * 0 -- Degrees;
+     * 1 -- Radians;
+     * 2 -- Gradians;
+     */
+
+    public static Double sine(Double x, int mode){
+        x = toCurrentMode(x, mode);
         return new Double(Math.sin(x.doubleValue()));
     }
 
-    public Double cosine(Double x){
-        x = toCurrentMode(x);
+    public static Double cosine(Double x, int mode){
+        x = toCurrentMode(x, mode);
         return new Double(Math.cos(x.doubleValue()));
     }
 
-    public Double tangent(Double x){
-        x = toCurrentMode(x);
+    public static Double tangent(Double x, int mode){
+        x = toCurrentMode(x, mode);
         return new Double(0);
     }
 
-    public Double arcsine(Double x){
+    public static Double arcsine(Double x, int mode){
         x = new Double(Math.asin(x.doubleValue()));
-        return toCurrentMode(x);
+        return toCurrentMode(x, mode);
     }
 
-    public Double arccosine(Double x){
+    public static Double arccosine(Double x, int mode){
         x = new Double(Math.acos(x.doubleValue()));
-        return toCurrentMode(x);
+        return toCurrentMode(x, mode);
     }
 
-    public Double arctangent(Double x){
+    public static Double arctangent(Double x, int mode){
         x = new Double(Math.atan(x.doubleValue()));
-        return toCurrentMode(x);
-    }
-
-
-    // Switch trig units mode
-    public void switchUnitsMode(){
-        switch (currentUnitMode){
-            case DEG:
-                currentUnitMode = UnitMode.RAD;
-            case RAD:
-                currentUnitMode = UnitMode.GRAD;
-            case GRAD:
-                currentUnitMode = UnitMode.DEG;
-        }
-    }
-
-    public void switchUnitsMode(String mode){
-
-        if(mode.equalsIgnoreCase("deg"))
-            currentUnitMode = UnitMode.DEG;
-        if(mode.equalsIgnoreCase("degree"))
-            currentUnitMode = UnitMode.DEG;
-        if(mode.equalsIgnoreCase("degrees"))
-            currentUnitMode = UnitMode.DEG;
-        if(mode.equalsIgnoreCase("rad"))
-            currentUnitMode = UnitMode.RAD;
-        if(mode.equalsIgnoreCase("radian"))
-            currentUnitMode = UnitMode.RAD;
-        if(mode.equalsIgnoreCase("radians"))
-            currentUnitMode = UnitMode.RAD;
-        if(mode.equalsIgnoreCase("grad"))
-            currentUnitMode = UnitMode.GRAD;
-        if(mode.equalsIgnoreCase("gradian"))
-            currentUnitMode = UnitMode.GRAD;
-        if(mode.equalsIgnoreCase("gradians"))
-            currentUnitMode = UnitMode.GRAD;
+        return toCurrentMode(x, mode);
     }
 
 
     // Logarithmic Functions
-    public Double log(Double x){
+    public static Double log(Double x){
         return Double.valueOf(Math.log10(x.doubleValue()));
     }
 
-    public Double ln(Double x){
+    public static Double ln(Double x){
         return Double.valueOf(Math.log(x.doubleValue()));
     }
 
-    public Double tenToTheX(Double x){
+    public static Double tenToTheX(Double x){
         return Double.valueOf(Math.pow(10,x));
     }
 
-    public Double exp(Double x){
+    public static Double exp(Double x){
         return Double.valueOf(Math.exp(x));
     }
 
 
 
     // Factorial
-    public Double factorial(Double x){
+    public static Double factorial(Double x){
         if(Double.compare(x,x - x.intValue()) > factorialCutoff)
             return Double.NaN;
         else if(x.compareTo(Double.valueOf(0)) == -1)
@@ -141,13 +77,26 @@ public class CalSciFunctions {
 
     }
 
+    public static Double factFunction(Double x){
+        int y;
+        Long fact = new Long(1);
+        if(x.compareTo(Double.valueOf(0))==0)
+            return Double.valueOf(1);
+        else
+            y = x.intValue();
+        for(int i=1;i<=y;i++){
+            fact*=i;
+        }
+        return Double.valueOf(fact);
+    }
+
 
     // I just want this in any calculator
-    public Double e(){
+    public static Double e(){
         return Double.valueOf(Math.exp(1));
     }
 
-    public Double pi(){
+    public static Double pi(){
         return Double.valueOf(Math.PI);
     }
 
@@ -156,40 +105,29 @@ public class CalSciFunctions {
 
 
     // helper methods
-    public Double toCurrentMode(Double x){
-        switch (currentUnitMode){
-            case DEG:
+    public static Double toCurrentMode(Double x, int mode){
+        switch (mode){
+            case 0:
                 x = degToRad(x);
                 break;
-            case GRAD:
-                x = gradToRad(x);
+            case 1:
                 break;
-            case RAD:
+            case 2:
+                x = gradToRad(x);
                 break;
         }
         return x;
     }
 
-    public Double degToRad(Double x){
+    public static Double degToRad(Double x){
         return (x * Math.PI)/180;
     }
 
-    public Double gradToRad(Double x){
+    public static Double gradToRad(Double x){
         return (x * Math.PI)/200;
     }
 
 
-    public Double factFunction(Double x){
-        int y;
-        int z = 1;
-        if(x.compareTo(Double.valueOf(0))==0)
-            return Double.valueOf(1);
-        else
-            y = x.intValue();
-            for(int i=1;i<=y;i++){
-                z*=i;
-            }
-            return Double.valueOf(z);
-    }
+
 
 }
