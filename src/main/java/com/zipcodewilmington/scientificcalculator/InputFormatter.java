@@ -12,13 +12,13 @@ public class InputFormatter {
         s = s.toLowerCase();
         switch(mode){
             case 0:
-                return stringToDouble(s,2);
+                return stringToDouble(s,0);
             case 1:
-                return stringToDouble(s,8);
+                return stringToDouble(s,1);
             case 2:
                 return Double.valueOf(s);
             case 3:
-                return stringToDouble(s,16);
+                return stringToDouble(s,3);
             default:
                 return null;
         }
@@ -29,40 +29,6 @@ public class InputFormatter {
         return format(s, 3);
     }
 
-    /*  tester is unnecessary
-    public static Boolean validFormat(String s){
-        Boolean isValid = true;
-        if(s.length()==1){
-            if(Character.isDigit(s.charAt(0))){
-               return true;
-            }
-            else {
-                return false;
-            }
-        }
-
-        if (s.length() == 2 && !Character.isDigit(s.charAt(0)) && !Character.isDigit(s.charAt(1))) {
-            return false;
-        }
-
-        boolean hasDot = false;
-
-        if(!Character.isDigit(s.charAt(0)) && s.charAt(0) != '-'){
-            if(s.charAt(0) == '.'){
-                hasDot = true;
-            }
-            else {
-                return false;
-            }
-        }
-
-        for(int i=1;i<s.length();i++){
-            if(!Character.isDigit())
-        }
-
-        return isValid;
-    }
-    */
 
     public static Double stringToDouble(String s, int mode) {
 
@@ -96,7 +62,16 @@ public class InputFormatter {
     public static Double getRightValue(String s, int mode){
         double base = getBase(mode);
 
-        return null;
+        double placeValue = base;
+        Double rightValue = 0.0;
+        for(int i = 0; i < s.length(); i++){
+            //System.out.println("i: " + i + "     char: " + s.charAt(i) + "      str: " + charToHex(s.charAt(i)));
+            //System.out.println("   placeValue: " + placeValue + "     res: " + Double.valueOf(charToHex(s.charAt(i)))/ placeValue);
+            rightValue = rightValue + Double.valueOf(charToHex(s.charAt(i))) / placeValue;
+            placeValue = placeValue * base;
+        }
+
+        return rightValue;
     }
 
     public static String charToHex(char c){
