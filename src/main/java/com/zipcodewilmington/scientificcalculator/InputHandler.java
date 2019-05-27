@@ -194,7 +194,7 @@ public class InputHandler {
     }
 
     public Boolean isUnary(String op){
-        String[] unaryOps = {"dbin", "doct", "ddec", "dhex",
+        String[] unaryOps = {"disbin", "disoct", "disdec", "dishex",
             "sqrt", "sign", "recip", "sin", "cos", "tan",
             "acos", "asin", "atan", "log", "ln", "10^",
             "e^", "!"};
