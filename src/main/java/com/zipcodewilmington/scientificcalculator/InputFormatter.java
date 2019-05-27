@@ -35,19 +35,28 @@ public class InputFormatter {
         int dotPlace = s.indexOf('.');
 
         if (dotPlace == -1) {
-            return getLeftValue(s, mode);
+            return getLeftValue(s, mode) * getNegative(s);
         }
         else {
-            return getLeftValue(s.substring(0, dotPlace), mode) + getRightValue(s.substring(dotPlace + 1), mode);
+            return (getLeftValue(s.substring(0, dotPlace), mode) + getRightValue(s.substring(dotPlace + 1), mode)) * getNegative(s);
         }
     }
 
     public static Double getLeftValue(String s, int mode){
+
         double base = getBase(mode);
+
+
+        int loopEnd = - 1;
+        if(s.length() > 0) {
+            if (s.charAt(0) == '-' || s.charAt(0) == '+') {
+                loopEnd = 0;
+            }
+        }
 
         double placeValue = 1;
         Double leftValue = 0.0;
-        for(int i = s.length()-1;i > -1; i--){
+        for(int i = s.length()-1;i > loopEnd; i--){
             //System.out.println("i: " + i + "         char: " + s.charAt(i) + "       str: " + charToHex(s.charAt(i)));
             leftValue = leftValue + Double.valueOf(charToHex(s.charAt(i))) * placeValue;
             //System.out.println("i: " + i + "    leftValue: " + leftValue + "     placeValue: " + placeValue);
@@ -125,6 +134,15 @@ public class InputFormatter {
                 return 16.0;
             default:
                 return 10.0;
+        }
+    }
+
+    public static Double getNegative(String s){
+        if(s.length() > 0 && s.charAt(0) == '-'){
+            return -1.0;
+        }
+        else {
+            return 1.0;
         }
     }
 

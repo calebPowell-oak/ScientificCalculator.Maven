@@ -557,7 +557,87 @@ public class InputFormatterTest {
         Assert.assertEquals(Double.valueOf(0.6630859375),result, 0.0000001);
     }
 
+    @Test
+    public void formatNH1(){
+        // Arrange
+        String s = "-fa7";
 
+        // Act
+        Double result = InputFormatter.format(s,3);
 
+        // Assertion
+        Assert.assertEquals(-4007.0,result,0.0000001);
+    }
 
+    @Test
+    public void formatNH2(){
+        // Arrange
+        String s = "+b7.";
+
+        // Act
+        Double result = InputFormatter.format(s,3);
+
+        // Assert
+        Assert.assertEquals(183.0,result,0.0000001);
+    }
+
+    @Test
+    public void formatNH3(){
+        // Arrange
+        String s = "-.543";
+
+        // Act
+        Double result = InputFormatter.format(s,3);
+
+        // Assert
+        Assert.assertEquals(-0.328857421875,result,0.0000001);
+    }
+
+    @Test
+    public void formatNH4(){
+        // Arrange
+        String s = "+a4.c5";
+
+        // Act
+        Double result = InputFormatter.format(s,3);
+
+        // Assert
+        Assert.assertEquals(164.76953125,result,0.0000001);
+    }
+
+    @Test
+    public void formatNB1(){
+        // Arrange
+        String s = "-.001";
+
+        // Act
+        Double result = InputFormatter.format(s,0);
+
+        // Assert
+        Assert.assertEquals(-0.125,result,0.0000001);
+    }
+
+    @Test
+    public void formatNB2(){
+        // Arrange
+        String s = "+1001.";
+
+        // Act
+        Double result = InputFormatter.format(s,0);
+
+        // Assert
+        Assert.assertEquals(9.0,result,0.0000001);
+    }
+
+    @Test
+    public void formatNB3(){
+        // Arrange
+        String s = "110010.";
+
+        // Act
+        Double result = InputFormatter.format(s,0);
+
+        // Assert
+        Assert.assertEquals(50.0,result,0.0000001);
+    }
 }
