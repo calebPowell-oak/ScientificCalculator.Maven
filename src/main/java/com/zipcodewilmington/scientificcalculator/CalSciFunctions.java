@@ -18,50 +18,50 @@ public class CalSciFunctions {
 
     public static Double sine(Double x, int mode){
         x = toCurrentMode(x, mode);
-        return new Double(Math.sin(x.doubleValue()));
+        return Math.sin(x);
     }
 
     public static Double cosine(Double x, int mode){
         x = toCurrentMode(x, mode);
-        return new Double(Math.cos(x.doubleValue()));
+        return Math.cos(x);
     }
 
     public static Double tangent(Double x, int mode){
         x = toCurrentMode(x, mode);
-        return new Double(0);
+        return Math.tan(x);
     }
 
     public static Double arcsine(Double x, int mode){
-        x = new Double(Math.asin(x.doubleValue()));
+        x = Math.asin(x);
         return toCurrentMode(x, mode);
     }
 
     public static Double arccosine(Double x, int mode){
-        x = new Double(Math.acos(x.doubleValue()));
+        x = Math.acos(x);
         return toCurrentMode(x, mode);
     }
 
     public static Double arctangent(Double x, int mode){
-        x = new Double(Math.atan(x.doubleValue()));
+        x = Math.atan(x);
         return toCurrentMode(x, mode);
     }
 
 
     // Logarithmic Functions
     public static Double log(Double x){
-        return Double.valueOf(Math.log10(x.doubleValue()));
+        return Math.log10(x);
     }
 
     public static Double ln(Double x){
-        return Double.valueOf(Math.log(x.doubleValue()));
+        return Math.log(x);
     }
 
     public static Double tenToTheX(Double x){
-        return Double.valueOf(Math.pow(10,x));
+        return Math.pow(10,x);
     }
 
     public static Double exp(Double x){
-        return Double.valueOf(Math.exp(x));
+        return Math.exp(x);
     }
 
 
@@ -70,7 +70,7 @@ public class CalSciFunctions {
     public static Double factorial(Double x){
         if(Double.compare(x,x - x.intValue()) > factorialCutoff)
             return Double.NaN;
-        else if(x.compareTo(Double.valueOf(0)) == -1)
+        else if(x.compareTo(0.0) == -1)
             return Double.NaN;
         else
             return factFunction(x);
@@ -79,9 +79,9 @@ public class CalSciFunctions {
 
     public static Double factFunction(Double x){
         int y;
-        Long fact = new Long(1);
-        if(x.compareTo(Double.valueOf(0))==0)
-            return Double.valueOf(1);
+        Long fact = Long.valueOf(1);
+        if(x.compareTo(0.0)==0)
+            return 1.0;
         else
             y = x.intValue();
         for(int i=1;i<=y;i++){
@@ -93,11 +93,11 @@ public class CalSciFunctions {
 
     // I just want this in any calculator
     public static Double e(){
-        return Double.valueOf(Math.exp(1));
+        return Math.exp(1);
     }
 
     public static Double pi(){
-        return Double.valueOf(Math.PI);
+        return Math.PI;
     }
 
 
@@ -131,3 +131,4 @@ public class CalSciFunctions {
 
 
 }
+
