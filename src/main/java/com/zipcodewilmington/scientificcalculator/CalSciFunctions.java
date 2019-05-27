@@ -3,7 +3,7 @@ package com.zipcodewilmington.scientificcalculator;
 public class CalSciFunctions {
 
 
-    private static Double factorialCutoff = 0.000001;
+    private static Double factorialCutoff = 0.0000000000001;
 
 
 
@@ -68,9 +68,9 @@ public class CalSciFunctions {
 
     // Factorial
     public static Double factorial(Double x){
-        if(Double.compare(x,x - x.intValue()) > factorialCutoff)
+        if(x - x.intValue() > factorialCutoff)
             return Double.NaN;
-        else if(x.compareTo(0.0) == -1)
+        else if(x < 0.0)
             return Double.NaN;
         else
             return factFunction(x);
