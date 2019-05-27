@@ -20,7 +20,7 @@ public class calCoreFunctions {
 //        set this.display to a value
     }
 
-    public Double add(Double a, Double b){
+    public static Double add(Double a, Double b){
 //        return double result
         return 0d;
     }
