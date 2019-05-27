@@ -11,8 +11,7 @@ public class TestMainApplication {
         Double x = 120;
         CalSciFunctions c = new CalSciFunctions();
         // Act
-        switchUnitsMode s = new switchUnitsMode();
-        Unimode.RAD;
+
         Double result = c.sine(x);
 
         // Assertion
@@ -82,7 +81,7 @@ public class TestMainApplication {
         CalSciFunctions c = new CalSciFunctions();
         // Act
 
-        Double result = c.cos(a);
+        Double result = c.cosine(a);
 
         // Assertion
         Assert.assertEquals(new Double(-0.99619), result);
@@ -174,28 +173,26 @@ public class TestMainApplication {
 
         }
 
-@Test
-public void arctangent() {
+    @Test
+    public void arctangent() {
         // Arrange
         Double x = 1;
         CalSciFunctions c = new CalSciFunctions();
         // Act
-        switchUnitsMode s = new switchUnitsMode();
-        Unimode.RAD;
+
         Double result = c.arctangent(x);
 
         // Assertion
         Assert.assertEquals(new Double(1.57080), result);
 
         }
-@Test
-public void arctangent() {
+    @Test
+    public void arctangent() {
         // Arrange
         Double x = 0;
         CalSciFunctions c = new CalSciFunctions();
         // Act
-        switchUnitsMode s = new switchUnitsMode();
-        Unimode.RAD;
+
         Double result = c.arctangent(x);
 
         // Assertion
@@ -203,8 +200,8 @@ public void arctangent() {
 
         }
 
-@Test
-public void arctangent() {
+    @Test
+    public void arctangent() {
         // Arrange
         Double x = 2.5;
         CalSciFunctions c = new CalSciFunctions();
@@ -217,8 +214,8 @@ public void arctangent() {
 
         }
 //Mode conversions - RAD, DEG, and GRAD
-@Test
-public void degTotoCurrentMode() {
+    @Test
+    public void degTotoCurrentMode() {
         // Arrange
         Double degrees = 75;
         CalSciFunctions c = new CalSciFunctions();
@@ -231,8 +228,8 @@ public void degTotoCurrentMode() {
 
         }
 
-@Test
-public void deg2TotoCurrentMode() {
+    @Test
+    public void deg2TotoCurrentMode() {
         // Arrange
         Double a = 98;
         CalSciFunctions c = new CalSciFunctions();
@@ -246,8 +243,8 @@ public void deg2TotoCurrentMode() {
         }
 
 
-@Test
-public void gradToRadtoCurrentMode() {
+    @Test
+    public void gradToRadtoCurrentMode() {
         // Arrange
         Double a = 175;
         CalSciFunctions c = new CalSciFunctions();
@@ -260,8 +257,8 @@ public void gradToRadtoCurrentMode() {
 
         }
 
-@Test
-public void gradToRad2toCurrentMode() {
+    @Test
+    public void gradToRad2toCurrentMode() {
         // Arrange
         Double x = 120;
         CalSciFunctions c = new CalSciFunctions();
@@ -274,78 +271,6 @@ public void gradToRad2toCurrentMode() {
 
         }
 
-/*@Test
-public void negRadTangent() {
-        // Arrange
-        Double x = 37;
-        CalSciFunctions c = new CalSciFunctions();
-        // Act
-        switchUnitsMode s = new switchUnitsMode();
-        Unimode.RAD;
-        Double result = c.tangent(x);
-
-        // Assertion
-        Assert.assertEquals(new Double(-3.88011), result);
-
-        }
-
-@Test
-public void degreesTangent() {
-        // Arrange
-        Double x = 42;
-        CalSciFunctions c = new CalSciFunctions();
-        // Act
-        switchUnitsMode s = new switchUnitsMode();
-        Unimode.DEG;
-        Double result = c.tangent(x);
-
-        // Assertion
-        Assert.assertEquals(new Double(0.90040), result);
-
-        }
-@Test
-public void radArccosine() {
-        // Arrange
-        Double a = .5;
-        CalSciFunctions c = new CalSciFunctions();
-        // Act
-        switchUnitsMode s = new switchUnitsMode();
-        Unimode.RAD;
-        Double result = c.Arccosine(a);
-
-        // Assertion
-        Assert.assertEquals(new Double(1.04720), result);
-
-        }
-        }
-@Test
-public void negRadArccosine() {
-        // Arrange
-        Double a = 0;
-        CalSciFunctions c = new CalSciFunctions();
-        // Act
-        switchUnitsMode s = new switchUnitsMode();
-        Unimode.RAD;
-        Double result = c.Arccosine(a);
-
-        // Assertion
-        Assert.assertEquals(new Double(1), result);
-
-        }
-
-
-@Test
-public void degreesArccosine() {
-        // Arrange
-        Double a = 32;
-        CalSciFunctions c = new CalSciFunctions();
-        // Act
-        switchUnitsMode s = new switchUnitsMode();
-        Unimode.DEG;
-        Double result = c.Arccosine(a);
-
-        // Assertion
-        Assert.assertEquals(new Double(0.97821), result);
 
 
 
