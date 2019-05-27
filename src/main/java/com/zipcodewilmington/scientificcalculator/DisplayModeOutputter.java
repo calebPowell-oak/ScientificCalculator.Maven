@@ -14,6 +14,11 @@ public class DisplayModeOutputter {
     private static int binaryRightLength;
 
     public static String getOutput(Double d, int mode){
+        if(d.isNaN()){
+            return "NaN";
+        } else if(d.isInfinite()){
+            return "NaN";
+        }
         switch (mode){
             case 0:
                 return toBinary(d);
