@@ -181,13 +181,13 @@ public class InputHandler {
                 if(exitEarly)break;
                 prevValue = doMath();
                 isNew = false;
-                Console.println(prevValue.toString());
+                Console.println(DisplayModeOutputter.getOutput(prevValue, MainApplication.getDisplayModeChoice()));
             } else {
                 if(exitEarly)break;
                 nextValue = numberFromInput();
                 prevValue = doMath();
                 isNew = false;
-                Console.println(prevValue.toString());
+                Console.println(DisplayModeOutputter.getOutput(prevValue, MainApplication.getDisplayModeChoice()));
             }
         }
         exitEarly = false;
@@ -199,7 +199,7 @@ public class InputHandler {
         String[] unaryOps = {"disbin", "disoct", "disdec", "dishex",
             "sqrt", "sign", "recip", "sin", "cos", "tan",
             "acos", "asin", "atan", "log", "ln", "10^",
-            "e^", "!"};
+            "e^", "!", "^2"};
         for (String operators:unaryOps) {
             if(operators.equals(op)){
                 return true;
