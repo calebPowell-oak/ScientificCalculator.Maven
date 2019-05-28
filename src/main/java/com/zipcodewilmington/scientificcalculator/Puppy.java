@@ -22,7 +22,7 @@ public class Puppy {
                 "|b      |b",",-.___,-.\n" +
                 "\\_/_ _\\_/\n" +
                 "  )O_O(\n" +
-                " { (_) }   " + Language.inputInvalid.get(MainApplication.getLanguageChoice()) +"\n" +
+                " { (_) }   " + Language.dogTalk.get(MainApplication.getLanguageChoice()) +"\n" +
                 "  `-^-'  ","             ___\n" +
                 "          __/_  `.  .-\"\"\"-.\n" +
                 Language.dogTalk.get(MainApplication.getLanguageChoice()) + "     \\_,` | \\-'  /   )`-')\n" +
