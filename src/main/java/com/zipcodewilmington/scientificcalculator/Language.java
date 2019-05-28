@@ -79,6 +79,7 @@ public class Language {
     private static String[] com = {"Command:          (list: list commands)",
             "Comando:          (list: listar comandos)"};
     private static String[] exit = {"Exit calc mode?\ny/n", "salir del modo de cálculo?\ny/n"};
+    private static String[] bark = {"woof", "guau"};
 
     public static ArrayList<String> greeting = new ArrayList<String>(Arrays.asList(greets));
     public static ArrayList<String> availableCommands = new ArrayList<String>(Arrays.asList(cmds));
@@ -88,5 +89,6 @@ public class Language {
     public static ArrayList<String> command = new ArrayList<String>(Arrays.asList(com));
     public static ArrayList<String> mainCommands = new ArrayList<String>(Arrays.asList(mainCmds));
     public static ArrayList<String> quitCalc = new ArrayList<String>(Arrays.asList(exit));
+    public static ArrayList<String> dogTalk = new ArrayList<String>(Arrays.asList(bark));
 
 }

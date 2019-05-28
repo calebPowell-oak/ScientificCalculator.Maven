@@ -3,12 +3,9 @@ package com.zipcodewilmington.scientificcalculator;
 //import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 //import sun.applet.Main;
 
-import sun.applet.Main;
-
-import java.util.Random;
+//import sun.applet.Main;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.Random;
 
 public class InputHandler {
 
