@@ -32,7 +32,7 @@ public class InputHandler {
 
     public Pattern setRegexMode(int val){
 
-        Pattern binaryDoubleRegex =     Pattern.compile("[\\+-]?(([01]+(\\.[01]+)?)|(\\.[01]+))");
+        Pattern binaryDoubleRegex =     Pattern.compile("[\\+-]?(([0-1]+(\\.[0-1]+)?)|(\\.[0-1]+))");
         Pattern octalDoubleRegex =      Pattern.compile("[\\+-]?(([0-7]+(\\.[0-7]+)?)|(\\.[0-7]+))");
         Pattern decimalDoubleRegex =    Pattern.compile("[\\+-]?((\\d+(\\.\\d+)?)|(\\.\\d+))");
         Pattern hexDoubleRegex =        Pattern.compile("[\\+-]?(([0-9a-fA-F]+(\\.[0-9a-fA-F]+)?)|(\\.[0-9a-fA-F]+))");

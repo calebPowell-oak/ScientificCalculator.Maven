@@ -58,7 +58,7 @@ public class Language {
                     "CMode: change calc mode (hex, bin, dec, oct)\n" +
                     "LMode: change language\n" +
                     "Math: list math operators\n" +
-                    "Puppy: Show puppy" +
+//                    "Puppy: Show puppy" +
                     "\nExit: exit",
 
             "Available commands:\n" +
@@ -68,7 +68,7 @@ public class Language {
                     "CMode: cambiar el modo de cálculo (hex, bin, dec, oct)\n" +
                     "LMode: cambiar idioma\n" +
                     "Math: listar operadores matemáticos\n" +
-                    "Puppy: mostrar perrito" +
+//                    "Puppy: mostrar perrito" +
                     "\nExit: suspender",
     };
     private static String[] invalidInput = {"Invalid input.", "inputo invalido"};
