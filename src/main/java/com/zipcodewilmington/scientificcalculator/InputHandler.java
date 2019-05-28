@@ -5,8 +5,10 @@ package com.zipcodewilmington.scientificcalculator;
 
 import sun.applet.Main;
 
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Random;
 
 public class InputHandler {
 
@@ -232,8 +234,12 @@ public class InputHandler {
                 MainApplication.setFinished(Boolean.TRUE);
                 break;
             }
-            case "math": {
+            case "math":{
                 Console.println(Language.availableCommands.get(MainApplication.getLanguageChoice()));
+                break;
+            }
+            case "puppy":{
+                Console.println(Puppy.getPuppy());
                 break;
             }
             default:{

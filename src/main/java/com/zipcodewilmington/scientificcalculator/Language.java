@@ -52,21 +52,23 @@ public class Language {
     };
     private static String[] mainCmds = {
             "Available commands:\n" +
+                    "C: calculator mode\n" +
                     "list: list commands\n" +
                     "DMode: change degree mode\n" +
                     "CMode: change calc mode (hex, bin, dec, oct)\n" +
                     "LMode: change language\n" +
-                    "C: calculator mode\n" +
                     "Math: list math operators\n" +
+                    "Puppy: Show puppy" +
                     "\nExit: exit",
 
             "Available commands:\n" +
+                    "C: modo calculadora\n" +
                     "list: listar comandos\n" +
                     "DMode: cambiar el modo de grado\n" +
                     "CMode: cambiar el modo de cálculo (hex, bin, dec, oct)\n" +
                     "LMode: cambiar idioma\n" +
-                    "C: modo calculadora\n" +
                     "Math: listar operadores matemáticos\n" +
+                    "Puppy: mostrar perrito" +
                     "\nExit: suspender",
     };
     private static String[] invalidInput = {"Invalid input.", "inputo invalido"};
